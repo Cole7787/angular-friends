@@ -24,7 +24,7 @@
 
         <select class="input-medium" ng-model="sortProp">
           <option value="name">Name</option>
-          <option value="friend_count">#Friends</option>
+          <option value="friend_count">Friends</option>
           <option value="current_location.city">City</option>
           <option value="current_location.state">State</option>
           <option value="current_location.country">Country</option>
@@ -38,7 +38,7 @@
       </div>
     </form>
 
-    <ul ng-repeat="friend in friends | filter: friendFilter | orderBy: sortProp: sortDirection">
+    <ul ng-repeat="friend in friends | filter: friendFilter | orderBy: sortDirection + sortProp">
       <li class="friend">
         <img class="profile-pic" ng-src='{{friend.pic_square}}'>
 
